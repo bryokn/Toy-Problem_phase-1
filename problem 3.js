@@ -1,25 +1,22 @@
+//Declare variables
 var speed;
 var overSpeedLimit;
 var demeritPoint = Math.floor((speed-70)/5);
-// Write a program that takes the speed of a 
-// car as input e.g 80. If the speed is less than 
-// 70, it should print “Ok”. Otherwise, for every 
-// 5 km/s above the speed limit (70), it should
-//  give the driver one demerit point and print 
-//  the total number of demerit points.
+
+//Input speed of the car
 speed=prompt(`Input your speed`);
+//Check speed if less than or equal to 70
 if (speed <=70){
-    console.log(`Ok`);
+    console.log(`Ok`);//Print Ok is speed is within the limit
 }
 else if (speed>=71){
+    //Calculate the demerit points of above 70
    demeritPoint= Math.floor((speed-70)/5);
+    //Check if demerit points are less than 12
     if(demeritPoint<12){
-        demeritPoint;
+        console.log(demeritPoint + " demerit points");
     }
         else{
-            "License suspended"
-        };
+           console.log( "License suspended" );
+        }//Print "License suspended" is demerit points reach or exceed 12 points
     }
-
-
-    
