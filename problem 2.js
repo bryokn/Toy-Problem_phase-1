@@ -2,6 +2,7 @@ const salary =prompt(`input your salary`);
 let nhif;
 let txRate;
 
+//Claculate tax rate
 function taxRate(){
    
 // Monthly Taxable Pay (Ksh)	Annual Taxable Pay (Ksh)	Rate of Tax (%)
@@ -27,10 +28,9 @@ function taxRate(){
         txRate=35/100;
     }
     return (taxRate);
-
-
-
 }
+
+//Calculate NHIF Deduction
 function nhifRate(){
 // Up to 24,000	Up to 288,000	10
 // 24,001 - 32,333	288,001 - 388,000	25
@@ -62,11 +62,9 @@ function nhifRate(){
     }
     else if (salary >=35000 && salary<=39999){
         nhifDeduction=950;
-
     } 
     else if (salary >=40000 && salary<=44999){
         nhifDeduction=1000;
-
     } 
     else if (salary >=45000 && salary<=49999){
         nhifDeduction=1100;
@@ -86,14 +84,20 @@ function nhifRate(){
     else if (salary >=90000 && salary<=99999){
         nhifDeduction=1600;
     }
-    else if (salary > 10000){
-        1700;
+    else if (salary > 100000){
+        nhifDeduction=1700;
     }
-   
-
+    return (nhifDeduction);
 }
-return (nhifDeduction);
-console.log (`salary;`,salary,nhifDeduction,payee );
+
+//call to get tax rate and NHIF Deduction
+taxRate();
+nhifRate();
+
+//Dislay resultsF
+console.log (`Salary: ${salary}`);
+console.log(`Tax Rate: ${txRate * 100}%`);
+console.log(`NHIF Deduction: ${nhifDeduction}`);
 
 // const nssDeductionRate = 0.06;
 // const nhifDeduction = 1700;
